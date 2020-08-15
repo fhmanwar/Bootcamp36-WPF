@@ -59,7 +59,7 @@ namespace CRUDWPF
                     break;
 
                 case "ItemCreate":
-                    control = new UserControlCreate();
+                    control = new UserControlSupplier();
                     GridMain.Children.Add(control);
                     break;
                 default:

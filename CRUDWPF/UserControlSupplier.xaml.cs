@@ -20,10 +20,10 @@ namespace CRUDWPF
     /// <summary>
     /// Interaction logic for UserControlCreate.xaml
     /// </summary>
-    public partial class UserControlCreate : UserControl
+    public partial class UserControlSupplier : UserControl
     {
         MyContext context = new MyContext();
-        public UserControlCreate()
+        public UserControlSupplier()
         {
             InitializeComponent();
             dtList.ItemsSource = context.Suppliers.ToList();

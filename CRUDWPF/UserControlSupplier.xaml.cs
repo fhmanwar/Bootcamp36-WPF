@@ -130,5 +130,10 @@ namespace CRUDWPF
             var filteredData = context.Suppliers.Where(Q => Q.Id.ToString().Contains(txtSearch.Text) || Q.Name.Contains(txtSearch.Text)).ToList(); ;
             dtList.ItemsSource = filteredData;
         }
+
+        private void txtName_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

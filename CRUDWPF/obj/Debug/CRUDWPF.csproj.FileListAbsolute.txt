@@ -88,3 +88,4 @@ D:\MII\MIICC\Tugas\#5\Bootcamp36-WPF\CRUDWPF\obj\Debug\CRUDWPF.Properties.Resour
 D:\MII\MIICC\Tugas\#5\Bootcamp36-WPF\CRUDWPF\obj\Debug\CRUDWPF.csproj.GenerateResource.cache
 D:\MII\MIICC\Tugas\#5\Bootcamp36-WPF\CRUDWPF\obj\Debug\CRUDWPF.csproj.CoreCompileInputs.cache
 D:\MII\MIICC\Tugas\#5\Bootcamp36-WPF\CRUDWPF\obj\Debug\CRUDWPF.csproj.CopyComplete
+D:\MII\MIICC\Tugas\#5\Bootcamp36-WPF\CRUDWPF\obj\Debug\CRUDWPF.Migrations.addContextItem.resources

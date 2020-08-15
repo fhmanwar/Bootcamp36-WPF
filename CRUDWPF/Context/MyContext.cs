@@ -13,5 +13,6 @@ namespace CRUDWPF.Context
         public MyContext() : base("CRUDWPF") { }
 
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Item> Items { get; set; }
     }
 }

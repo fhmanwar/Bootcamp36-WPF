@@ -4,9 +4,44 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CRUDWPF"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="1024">
+    <Grid Background="White">
+        <Label Content="Belajar crud WPF" HorizontalAlignment="Left" Margin="460,95,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Margin="625,469,0,0" VerticalAlignment="Top" Width="113" Click="btnInsert_Click"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="26" Margin="661,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TextChanged="txtName_TextChanged"/>
+        <Label x:Name="lblName" Content="Nama" HorizontalAlignment="Left" Margin="573,325,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dtList" HorizontalAlignment="Left" Height="299" Margin="170,191,0,0" VerticalAlignment="Top" Width="335" SelectionChanged="dtList_SelectionChanged" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Stock" Binding="{Binding Stock}" />
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnDelete" Click="btnDelete_Click">
+                                <materialDesign:PackIcon Foreground="#FFFFFAFC" Kind="Trash" Width="25" Height="25"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblSearch" Content="Search" HorizontalAlignment="Left" Margin="573,211,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="26" Margin="641,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181"/>
+        
+        <Label x:Name="lblID" Content="ID" HorizontalAlignment="Left" Margin="573,281,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="26" Margin="661,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        <Label x:Name="lblStatusName" Content="" HorizontalAlignment="Left" Margin="661,382,0,0" VerticalAlignment="Top" Width="301" Background="#00000000" Foreground="#DDFF0000"/>
+        <Label x:Name="lblPrice" Content="Price" HorizontalAlignment="Left" Margin="573,369,0,0" VerticalAlignment="Top" Width="52"/>
+        
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="26" Margin="661,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        <Label x:Name="lblStock" Content="Stock" HorizontalAlignment="Left" Margin="573,420,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtStock" HorizontalAlignment="Left" Height="26" Margin="661,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="789,469,0,0" VerticalAlignment="Top" Width="113" Click="btnUpdate_Click" />
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="870,207,0,0" VerticalAlignment="Top" Width="105" Click="btnSearch_Click" />
+
     </Grid>
 </UserControl>

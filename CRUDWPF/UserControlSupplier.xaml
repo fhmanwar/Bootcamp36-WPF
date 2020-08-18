@@ -15,8 +15,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding Email}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding Pass}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <!--<DataGridTextColumn Header="Name" Binding="{Binding Pass}" />-->
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -35,7 +35,7 @@
         <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="724,348,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="26" Margin="792,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextChanged="txtName_TextChanged"/>
         <Label x:Name="lblPass" Content="Pass" HorizontalAlignment="Left" Margin="729,388,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="26" Margin="792,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" IsReadOnly="True"/>
+        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="26" Margin="792,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
 
         <Label x:Name="lblStatusName" Content="" HorizontalAlignment="Left" Margin="706,308,0,0" VerticalAlignment="Top" Width="301" Background="#00000000" Foreground="#DDFF0000"/>
         <Label x:Name="lblSearch" Content="Search" HorizontalAlignment="Left" Margin="412,158,0,0" VerticalAlignment="Top" Width="52"/>

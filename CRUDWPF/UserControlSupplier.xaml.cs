@@ -75,6 +75,8 @@ namespace CRUDWPF
                 var item = dtList.SelectedItem as Supplier;
                 txtID.Text = Convert.ToString(item.Id);
                 txtName.Text = item.Name;
+                txtEmail.Text = item.Email;
+                txtPass.Text = item.Pass;
                 btnUpdate.IsEnabled = true;
                 btnInsert.IsEnabled = false;
             }
@@ -90,6 +92,8 @@ namespace CRUDWPF
             {
                 var getId = context.Suppliers.Find(Convert.ToInt32(txtID.Text));
                 getId.Name = txtName.Text;
+                getId.Email = txtEmail.Text;
+                getId.Pass = txtPass.Text;
                 context.SaveChanges();
                 MessageBox.Show("Data Berhasil Update");
             }

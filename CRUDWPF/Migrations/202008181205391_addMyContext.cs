@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addNewContext : DbMigration
+    public partial class addMyContext : DbMigration
     {
         public override void Up()
         {
@@ -31,6 +31,8 @@
                     })
                 .PrimaryKey(t => t.Id);
             
+            AddColumn("dbo.Tb_M_Supplier", "Email", c => c.String());
+            AddColumn("dbo.Tb_M_Supplier", "Pass", c => c.String());
         }
         
         public override void Down()
@@ -39,6 +41,8 @@
             DropForeignKey("dbo.Tb_M_TransactionItem", "Item_Id", "dbo.Tb_M_Item");
             DropIndex("dbo.Tb_M_TransactionItem", new[] { "Transaction_Id" });
             DropIndex("dbo.Tb_M_TransactionItem", new[] { "Item_Id" });
+            DropColumn("dbo.Tb_M_Supplier", "Pass");
+            DropColumn("dbo.Tb_M_Supplier", "Email");
             DropTable("dbo.Tb_M_Transaction");
             DropTable("dbo.Tb_M_TransactionItem");
         }

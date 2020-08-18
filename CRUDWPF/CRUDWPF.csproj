@@ -74,9 +74,9 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008180257305_addNewContext.cs" />
-    <Compile Include="Migrations\202008180257305_addNewContext.designer.cs">
-      <DependentUpon>202008180257305_addNewContext.cs</DependentUpon>
+    <Compile Include="Migrations\202008181205391_addMyContext.cs" />
+    <Compile Include="Migrations\202008181205391_addMyContext.designer.cs">
+      <DependentUpon>202008181205391_addMyContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Item.cs" />
@@ -84,9 +84,6 @@
     <Compile Include="Model\TransactionItem.cs" />
     <Compile Include="UserControlItem.xaml.cs">
       <DependentUpon>UserControlItem.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlLogin.xaml.cs">
-      <DependentUpon>UserControlLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlSupplier.xaml.cs">
       <DependentUpon>UserControlSupplier.xaml</DependentUpon>
@@ -121,10 +118,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControlLogin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UserControlSupplier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,8 +150,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202008180257305_addNewContext.resx">
-      <DependentUpon>202008180257305_addNewContext.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008181205391_addMyContext.resx">
+      <DependentUpon>202008181205391_addMyContext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

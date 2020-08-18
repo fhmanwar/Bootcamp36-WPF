@@ -53,15 +53,31 @@ namespace CRUDWPF
 
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
-                case "ItemHome":
+                case "menuHome":
                     control = new UserControlHome();
                     GridMain.Children.Add(control);
                     break;
 
-                case "ItemCreate":
+                case "menuSupplier":
                     control = new UserControlSupplier();
                     GridMain.Children.Add(control);
                     break;
+
+                case "menuItem":
+                    control = new UserControlItem();
+                    GridMain.Children.Add(control);
+                    break;
+
+                case "menuTransaction":
+                    control = new UserControlTransaction();
+                    GridMain.Children.Add(control);
+                    break;
+
+                case "menuTransactionItem":
+                    control = new UserControlTransactionItem();
+                    GridMain.Children.Add(control);
+                    break;
+                    
                 default:
                     break;
             }

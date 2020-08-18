@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
 
 namespace CRUDWPF
 {
@@ -26,7 +27,16 @@ namespace CRUDWPF
         public UserControlItem()
         {
             InitializeComponent();
-            dtList.ItemsSource = context.Suppliers.ToList();
+            dtList.ItemsSource = context.Items.ToList();
+            //Combo_item.ItemsSource = context.Suppliers.Select(x => x.Name).ToList();
+
+            //Combo_item.ItemsSource = context.Items.Include(x => x.Supplier).ToList();
+            var item = context.Suppliers.ToList();
+            Combo_item.ItemsSource = item;
+            Combo_item.DisplayMemberPath = "Name";
+            Combo_item.SelectedValuePath = "Id";
+
+
             btnUpdate.IsEnabled = false;
             btnInsert.IsEnabled = true;
         }
@@ -40,7 +50,7 @@ namespace CRUDWPF
                 txtName.Text = data.Name;
                 txtPrice.Text = Convert.ToString(data.Price);
                 txtStock.Text = Convert.ToString(data.Stock);
-                txtStock.Text = Convert.ToString(data.Stock);
+                Combo_item.SelectedValue = data.Supplier.Id;
                 btnUpdate.IsEnabled = true;
                 btnInsert.IsEnabled = false;
             }
@@ -48,92 +58,98 @@ namespace CRUDWPF
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            var filteredData = context.Items.Where(Q => Q.Id.ToString().Contains(txtSearch.Text) || Q.Name.Contains(txtSearch.Text)).ToList(); ;
+            var filteredData = context.Items.Where(Q => Q.Id.ToString().Contains(txtSearch.Text) || Q.Name.Contains(txtSearch.Text)).ToList(); 
             dtList.ItemsSource = filteredData;
-        }
-
-        private void txtName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //if (string.IsNullOrWhiteSpace(txtName.Text))
-            //{
-            //    lblStatusName.Content = "*Name Cannot Empty !";
-            //    btnInsert.IsEnabled = false;
-            //}
-            //else if (!txtName.Text.All(char.IsLetterOrDigit))
-            //{
-            //    lblStatusName.Content = "*Name Must Contain Only number and text !";
-            //    btnInsert.IsEnabled = false;
-            //}
-            //else
-            //{
-            //    lblStatusName.Content = "";
-            //    btnInsert.IsEnabled = true;
-            //}
         }
 
         private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
-            //    //if (txtName.Text.Equals(""))
-            //    if (txtName.Text == "")
-            //    {
-            //        MessageBox.Show("Nama Wajib di masukkan");
-            //    }
-            //    else
-            //    {
-            //        var input = new Item(txtName.Text,);
-            //        context.Suppliers.Add(input);
-            //        context.SaveChanges();
-            //        MessageBox.Show("Data Berhasil Insert");
-            //    }
-
-            //    txtID.Text = "";
-            //    txtName.Text = "";
-            //    dtList.SelectedItem = null;
-            //    dtList.ItemsSource = context.Suppliers.ToList();
+            if (txtName.Text.Equals("") || Combo_item.SelectedValue == null)
+            {
+                MessageBox.Show("Nama Wajib di masukkan");
+            }
+            else
+            {
+                var getId = context.Suppliers.Find(Convert.ToInt32(Combo_item.SelectedValue));
+                var input = new Item(txtName.Text,Convert.ToInt32(txtPrice.Text), Convert.ToInt32(txtStock.Text), getId.Id);
+                context.Items.Add(input);
+                context.SaveChanges();
+                MessageBox.Show("Data Berhasil Insert");
+            }
+            Refresh();
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            //    if (txtID.Text.Equals(""))
-            //    {
-            //        MessageBox.Show("Nama Wajib di masukkan");
-            //    }
-            //    else
-            //    {
-            //        var getId = context.Suppliers.Find(Convert.ToInt32(txtID.Text));
-            //        getId.Name = txtName.Text;
-            //        context.SaveChanges();
-            //        MessageBox.Show("Data Berhasil Update");
-            //    }
-            //    dtList.SelectedItem.Equals("");
-            //    txtID.Text = "";
-            //    txtName.Text = "";
-            //    dtList.ItemsSource = context.Suppliers.ToList();
-            //    btnUpdate.IsEnabled = false;
-            //    btnInsert.IsEnabled = true;
+            if (txtID.Text.Equals(""))
+            {
+                MessageBox.Show("Nama Wajib di masukkan");
+            }
+            else
+            {
+                var getId = context.Items.Find(Convert.ToInt32(txtID.Text));
+                getId.Name = txtName.Text;
+                getId.Price = Convert.ToInt32(txtPrice.Text);
+                getId.Stock = Convert.ToInt32(txtStock.Text);
+                getId.Supplier_Id = Convert.ToInt32(Combo_item.SelectedValue);
+                context.SaveChanges();
+                MessageBox.Show("Data Berhasil Update");
+            }
+            Refresh();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            //    if (txtID.Text.Equals(""))
-            //    {
-            //        MessageBox.Show("Nama Wajib di masukkan");
-            //    }
-            //    else
-            //    {
-            //        var getId = context.Suppliers.Find(Convert.ToInt32(txtID.Text));
-            //        context.Suppliers.Remove(getId);
-            //        context.SaveChanges();
-            //        MessageBox.Show("Data Berhasil Delete");
-            //    }
-            //    dtList.SelectedItem.Equals("");
-            //    txtID.Text = "";
-            //    txtName.Text = "";
-            //    dtList.ItemsSource = context.Suppliers.ToList();
-            //    btnUpdate.IsEnabled = false;
-            //    btnInsert.IsEnabled = true;
+            if (txtID.Text.Equals(""))
+            {
+                MessageBox.Show("Nama Wajib di masukkan");
+            }
+            else
+            {
+                var getId = context.Items.Find(Convert.ToInt32(txtID.Text));
+                context.Items.Remove(getId);
+                context.SaveChanges();
+                MessageBox.Show("Data Berhasil Delete");
+            }
+            Refresh();
         }
 
+        private void Combo_item_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
 
+        }
+
+        private void Refresh()
+        {
+            if (btnUpdate.IsEnabled == true)
+            {
+                dtList.SelectedItem.Equals("");
+                txtID.Text = "";
+                txtName.Text = "";
+                txtPrice.Text = null;
+                txtStock.Text = null;
+                Combo_item.SelectedValue = null;
+                txtSearch.Text = "";
+                dtList.ItemsSource = context.Items.ToList();
+                btnUpdate.IsEnabled = false;
+                btnInsert.IsEnabled = true;
+            }
+            else
+            {
+                txtID.Text = "";
+                txtName.Text = "";
+                txtPrice.Text = null;
+                txtStock.Text = null;
+                Combo_item.SelectedValue = null;
+                txtSearch.Text = "";
+                dtList.SelectedItem = null;
+                dtList.ItemsSource = context.Items.ToList();
+            }
+        }
+
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            Refresh();
+        }
     }
 }

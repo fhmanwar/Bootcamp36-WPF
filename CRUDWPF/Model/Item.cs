@@ -18,6 +18,8 @@ namespace CRUDWPF.Model
         public int Stock { get; set; }
 
         public int Supplier_Id { get; set; }
+        
+        public ICollection<TransactionItem> TransactionItem { get; set; }
 
         [ForeignKey("Supplier_Id")]
         public virtual Supplier Supplier { get; set; }

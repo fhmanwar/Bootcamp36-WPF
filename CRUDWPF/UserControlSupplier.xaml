@@ -7,14 +7,16 @@
              mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="1024">
 
     <Grid Background="White">
-        <Label Content="Belajar crud WPF" HorizontalAlignment="Left" Margin="460,95,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Margin="641,426,0,0" VerticalAlignment="Top" Width="113" Click="btnInsert_Click"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="26" Margin="661,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" TextChanged="txtName_TextChanged"/>
-        <Label x:Name="lblName" Content="Nama" HorizontalAlignment="Left" Margin="573,351,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="dtList" HorizontalAlignment="Left" Height="299" Margin="170,191,0,0" VerticalAlignment="Top" Width="335" SelectionChanged="dtList_SelectionChanged" AutoGenerateColumns="False">
+        <Label Content="Supplier" HorizontalAlignment="Left" Margin="216,46,0,0" VerticalAlignment="Top" FontSize="28" Width="158" Height="50"/>
+        <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Margin="716,426,0,0" VerticalAlignment="Top" Width="85" Click="btnInsert_Click"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="26" Margin="792,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextChanged="txtName_TextChanged"/>
+        <Label x:Name="lblName" Content="Nama" HorizontalAlignment="Left" Margin="724,279,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dtList" HorizontalAlignment="Left" Height="299" Margin="170,191,0,0" VerticalAlignment="Top" Width="531" SelectionChanged="dtList_SelectionChanged" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Pass}" />
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -26,14 +28,24 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="lblID" Content="ID" HorizontalAlignment="Left" Margin="573,307,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="26" Margin="661,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="805,426,0,0" VerticalAlignment="Top" Width="113" Click="btnUpdate_Click" />
+        <Label x:Name="lblID" Content="ID" HorizontalAlignment="Left" Margin="724,235,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="26" Margin="792,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" IsReadOnly="True"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="833,426,0,0" VerticalAlignment="Top" Width="83" Click="btnUpdate_Click" />
+
+        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="724,348,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="26" Margin="792,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextChanged="txtName_TextChanged"/>
+        <Label x:Name="lblPass" Content="Pass" HorizontalAlignment="Left" Margin="729,388,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="26" Margin="792,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" IsReadOnly="True"/>
+
+        <Label x:Name="lblStatusName" Content="" HorizontalAlignment="Left" Margin="706,308,0,0" VerticalAlignment="Top" Width="301" Background="#00000000" Foreground="#DDFF0000"/>
+        <Label x:Name="lblSearch" Content="Search" HorizontalAlignment="Left" Margin="412,158,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="26" Margin="480,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="696,152,0,0" VerticalAlignment="Top" Width="84" Click="btnSearch_Click" />
+
+        <Button x:Name="btnRefresh" HorizontalAlignment="Left" Margin="945,426,0,0" VerticalAlignment="Top" Width="59" Click="btnRefresh_Click" Height="30" >
+            <materialDesign:PackIcon Foreground="#fff" Kind="Reload" Width="25" Height="25" RenderTransformOrigin="0.46,0.44"/>
+        </Button>
         <!-- <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="885,426,0,0" VerticalAlignment="Top" Width="105" Click="btnDelete_Click" /> -->
-        <Label x:Name="lblStatusName" Content="" HorizontalAlignment="Left" Margin="661,382,0,0" VerticalAlignment="Top" Width="301" Background="#00000000" Foreground="#DDFF0000"/>
-        <Label x:Name="lblSearch" Content="Search" HorizontalAlignment="Left" Margin="573,211,0,0" VerticalAlignment="Top" Width="52"/>
-        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="26" Margin="641,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="870,207,0,0" VerticalAlignment="Top" Width="105" Click="btnSearch_Click" />
 
     </Grid>
 </UserControl>

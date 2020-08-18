@@ -14,14 +14,18 @@ namespace CRUDWPF.Model
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Email { get; set; }
+        public string Pass { get; set; }
 
         public Supplier()
         {
 
         }
-        public Supplier(string name)
+        public Supplier(string name, string email, string pass)
         {
             this.Name = name;
+            this.Email = email;
+            this.Pass = pass;
         }
     }
 }

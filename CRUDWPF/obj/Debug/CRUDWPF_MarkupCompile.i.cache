@@ -4,17 +4,29 @@
 winexe
 C#
 .cs
-D:\MII\MIICC\Tugas\#5\Bootcamp36-WPF\CRUDWPF\obj\Debug\
+E:\Fahmi\MII\MIICC\#9 - WPF (Windows Platform Fondation) Desktop\tugas\BelajarCRUDWPF_Kelompok_5\CRUDWPF\obj\Debug\
 CRUDWPF
 none
 false
 DEBUG;TRACE
-D:\MII\MIICC\Tugas\#5\Bootcamp36-WPF\CRUDWPF\App.xaml
-41216996296
+E:\Fahmi\MII\MIICC\#9 - WPF (Windows Platform Fondation) Desktop\tugas\BelajarCRUDWPF_Kelompok_5\CRUDWPF\App.xaml
+8-658847031
 
-17322808442
-18981844219
-MainWindow.xaml;UserControlSupplier.xaml;UserControlHome.xaml;UserControlItem.xaml;
+21-1884803223
+181116662713
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+MainWindow.xaml;UserControlItem.xaml;UserControlSupplier.xaml;UserControlHome.xaml;UserControlTransaction.xaml;UserControlTransactionItem.xaml;
 
 False
+=======
+LoginWindow.xaml;MainWindow.xaml;UserControlItem.xaml;UserControlLogin.xaml;UserControlSupplier.xaml;UserControlHome.xaml;UserControlTransaction.xaml;UserControlTransactionItem.xaml;
+
+True
+>>>>>>> Stashed changes
+=======
+LoginWindow.xaml;MainWindow.xaml;UserControlItem.xaml;UserControlLogin.xaml;UserControlSupplier.xaml;UserControlHome.xaml;UserControlTransaction.xaml;UserControlTransactionItem.xaml;
+
+True
+>>>>>>> Stashed changes
 

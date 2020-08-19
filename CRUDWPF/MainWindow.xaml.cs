@@ -31,7 +31,10 @@ namespace CRUDWPF
 
         private void ButtonPopUpLogo_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            //Application.Current.Shutdown();
+            LoginWindow login = new LoginWindow();
+            login.Show();
+            this.Close();
         }
 
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)

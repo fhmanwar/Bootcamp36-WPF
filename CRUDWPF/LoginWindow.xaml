@@ -4,16 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUDWPF"
-        mc:Ignorable="d"
-        Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip">
-    <Grid x:Name="GridMain">
-        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="302,212,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="26" Margin="302,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" />
-        <Label x:Name="lblPass" Content="Password" HorizontalAlignment="Left" Margin="302,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,0.458"/>
-        <PasswordBox Name="txtPass" HorizontalAlignment="Center" Margin="302,322,477,216" Width="237"/>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="600" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="GridMain" >
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="image_3.jpg"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Background="#7F424242" />
+        <Label x:Name="Heading" Content="Login" Foreground="White" HorizontalAlignment="Left" Margin="154,64,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Rectangle HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="322" RadiusX="20" RadiusY="20" Margin="33,160,0,0" Fill="#4CC3C3C3"/>
+
+        <Label x:Name="lblEmail" Content="Email" Foreground="White" HorizontalAlignment="Left" Margin="68,192,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txtEmail" Foreground="White" HorizontalAlignment="Left" Height="26" Margin="68,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" BorderBrush="#89FFFFFF" />
+        <Label x:Name="lblPass" Content="Password" Foreground="White" HorizontalAlignment="Left" Margin="68,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,0.458" FontSize="16"/>
+        <PasswordBox Name="txtPass" Password="" Foreground="White" HorizontalAlignment="Center" Margin="68,314,86,223" Width="238" BorderBrush="#89FFFFFF"/>
         <!--<TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="26" Margin="302,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" />-->
 
-        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="361,404,0,0" VerticalAlignment="Top" Width="108" Click="btnLogin_Click" Height="46" />
+        <CheckBox Name="rememberMe" Foreground="White" Content="Check Me" FontFamily="Georgia" FontSize="16" FontWeight="Bold" Margin="53,364,201,178" />
+
+        <Button x:Name="btnLogin"  HorizontalAlignment="Left" Margin="146,402,0,0" VerticalAlignment="Top" Width="94" Click="btnLogin_Click" Height="56" ToolTip="Login" BorderBrush="#00000000" Background="#00008EFF"  >
+            <materialDesign:PackIcon Foreground="White" Kind="Login" Width="40" Height="36"/>
+        </Button>
+        
+        <Label x:Name="signUp" Content="you don't have account?" Foreground="White" HorizontalAlignment="Left" Margin="64,504,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,0.458" FontSize="16"/>
+        <Button x:Name="btnSignUp"  HorizontalAlignment="Left" Margin="244,495,0,0" VerticalAlignment="Top" Width="62" Click="btnSignUp_Click" Height="48" ToolTip="SignUp" BorderBrush="#00000000" Background="#00008EFF"  >
+            <materialDesign:PackIcon Foreground="White" Kind="Register" Width="20" Height="20"/>
+        </Button>
+
 
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using CRUDWPF.Context;
+﻿using Bcrypt = BCrypt.Net.BCrypt;
+using CRUDWPF.Context;
 using CRUDWPF.Model;
 using System;
 using System.Collections.Generic;
@@ -59,7 +60,8 @@ namespace CRUDWPF
             }
             else
             {
-                var input = new Supplier(txtName.Text,txtEmail.Text, txtPass.Text);
+                var bcrypt = Bcrypt.HashPassword(txtPass.Text);
+                var input = new Supplier(txtName.Text,txtEmail.Text, bcrypt.ToString());
                 context.Suppliers.Add(input);
                 context.SaveChanges();
                 MessageBox.Show("Data Berhasil Insert");
@@ -76,7 +78,7 @@ namespace CRUDWPF
                 txtID.Text = Convert.ToString(item.Id);
                 txtName.Text = item.Name;
                 txtEmail.Text = item.Email;
-                txtPass.Text = item.Pass;
+                //txtPass.Text = item.Pass;
                 btnUpdate.IsEnabled = true;
                 btnInsert.IsEnabled = false;
             }
@@ -93,7 +95,7 @@ namespace CRUDWPF
                 var getId = context.Suppliers.Find(Convert.ToInt32(txtID.Text));
                 getId.Name = txtName.Text;
                 getId.Email = txtEmail.Text;
-                getId.Pass = txtPass.Text;
+                getId.Pass = Bcrypt.HashPassword(txtPass.Text);
                 context.SaveChanges();
                 MessageBox.Show("Data Berhasil Update");
             }

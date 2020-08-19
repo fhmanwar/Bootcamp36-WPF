@@ -4,14 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="1024">
+             mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="935">
 
     <Grid Background="White">
-        <Label Content="Supplier" HorizontalAlignment="Left" Margin="216,46,0,0" VerticalAlignment="Top" FontSize="28" Width="158" Height="50"/>
-        <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Margin="716,426,0,0" VerticalAlignment="Top" Width="85" Click="btnInsert_Click"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="26" Margin="792,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextChanged="txtName_TextChanged"/>
-        <Label x:Name="lblName" Content="Nama" HorizontalAlignment="Left" Margin="724,279,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="dtList" HorizontalAlignment="Left" Height="299" Margin="170,191,0,0" VerticalAlignment="Top" Width="531" SelectionChanged="dtList_SelectionChanged" AutoGenerateColumns="False">
+        <Label Content="Supplier" HorizontalAlignment="Left" Margin="431,32,0,0" VerticalAlignment="Top" FontSize="28" Width="111" Height="50"/>
+        <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Margin="591,425,0,0" VerticalAlignment="Top" Width="85" Click="btnInsert_Click"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="26" Margin="659,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextChanged="txtName_TextChanged"/>
+        <Label x:Name="lblName" Content="Nama" HorizontalAlignment="Left" Margin="591,217,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dtList" HorizontalAlignment="Left" Height="300" Margin="36,155,0,0" VerticalAlignment="Top" Width="506" SelectionChanged="dtList_SelectionChanged" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
@@ -28,21 +28,21 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="lblID" Content="ID" HorizontalAlignment="Left" Margin="724,235,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="26" Margin="792,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" IsReadOnly="True"/>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="833,426,0,0" VerticalAlignment="Top" Width="83" Click="btnUpdate_Click" />
+        <Label x:Name="lblID" Content="ID" HorizontalAlignment="Left" Margin="591,167,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="26" Margin="659,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" IsReadOnly="True"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="708,425,0,0" VerticalAlignment="Top" Width="83" Click="btnUpdate_Click" />
 
-        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="724,348,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="26" Margin="792,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextChanged="txtName_TextChanged"/>
-        <Label x:Name="lblPass" Content="Pass" HorizontalAlignment="Left" Margin="729,388,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="26" Margin="792,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="591,290,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="26" Margin="659,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextChanged="txtName_TextChanged"/>
+        <Label x:Name="lblPass" Content="Pass" HorizontalAlignment="Left" Margin="591,345,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="26" Margin="659,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
 
-        <Label x:Name="lblStatusName" Content="" HorizontalAlignment="Left" Margin="706,308,0,0" VerticalAlignment="Top" Width="301" Background="#00000000" Foreground="#DDFF0000"/>
-        <Label x:Name="lblSearch" Content="Search" HorizontalAlignment="Left" Margin="412,158,0,0" VerticalAlignment="Top" Width="52"/>
-        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="26" Margin="480,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="696,152,0,0" VerticalAlignment="Top" Width="84" Click="btnSearch_Click" />
+        <Label x:Name="lblStatusName" Content="" HorizontalAlignment="Left" Margin="591,246,0,0" VerticalAlignment="Top" Width="301" Background="#00000000" Foreground="#DDFF0000"/>
+        <Label x:Name="lblSearch" Content="Search" HorizontalAlignment="Left" Margin="174,125,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="26" Margin="242,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="458,119,0,0" VerticalAlignment="Top" Width="84" Click="btnSearch_Click" RenderTransformOrigin="0.232,0.172" />
 
-        <Button x:Name="btnRefresh" HorizontalAlignment="Left" Margin="945,426,0,0" VerticalAlignment="Top" Width="59" Click="btnRefresh_Click" Height="30" >
+        <Button x:Name="btnRefresh" HorizontalAlignment="Left" Margin="820,425,0,0" VerticalAlignment="Top" Width="59" Click="btnRefresh_Click" Height="30" >
             <materialDesign:PackIcon Foreground="#fff" Kind="Reload" Width="25" Height="25" RenderTransformOrigin="0.46,0.44"/>
         </Button>
         <!-- <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="885,426,0,0" VerticalAlignment="Top" Width="105" Click="btnDelete_Click" /> -->

@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1024">
     <Grid Background="White">
-        <Label Content="Bootcamp 36" HorizontalAlignment="Left" Margin="344,242,0,0" VerticalAlignment="Top" Height="82" Width="318" FontSize="50" />
+        <Label Content="Bootcamp 36" HorizontalAlignment="Left" Margin="360,244,0,0" VerticalAlignment="Top" Height="82" Width="318" FontSize="50" />
     </Grid>
 </UserControl>

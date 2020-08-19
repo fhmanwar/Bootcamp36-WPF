@@ -33,7 +33,7 @@
 
 
     <Grid Margin="0,0,2,0">
-        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010"/>
+        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="500" Width="935" Margin="0,0,10,10"/>
         <Grid Height="50" VerticalAlignment="Top" Background="#FF0D8CD4" Margin="0,0,-2,0">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>

@@ -9,7 +9,7 @@
     <Grid x:Name="GridMain" >
         <Grid>
             <Grid.Background>
-                <ImageBrush ImageSource="image_3.jpg"/>
+                <ImageBrush ImageSource="Assets/image_3.jpg"/>
             </Grid.Background>
         </Grid>
         <Grid Background="#7F424242" />

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Fahmi\MII\MIICC\#9 - WPF (Windows Platform Fondation) Desktop\DotNet-WPF\CRUDWPF\obj\Debug\
+D:\MII\MIICC\#9 - WPF (Windows Platform Fondation) Desktop\DotNet-WPF\CRUDWPF\obj\Debug\
 CRUDWPF
 none
 false
 DEBUG;TRACE
-E:\Fahmi\MII\MIICC\#9 - WPF (Windows Platform Fondation) Desktop\DotNet-WPF\CRUDWPF\App.xaml
-8-1767920256
+D:\MII\MIICC\#9 - WPF (Windows Platform Fondation) Desktop\DotNet-WPF\CRUDWPF\App.xaml
+10924113606
 
-201154316265
-36-317727812
-LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;UserControlItem.xaml;UserControlSupplier.xaml;UserControlHome.xaml;UserControlTransaction.xaml;UserControlTransactionItem.xaml;
+221660554305
+36-1456424666
+ChangePassWindow.xaml;ForgotWindow.xaml;LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;UserControlItem.xaml;UserControlSupplier.xaml;UserControlHome.xaml;UserControlTransaction.xaml;UserControlTransactionItem.xaml;
 
 False
 

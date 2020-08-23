@@ -106,21 +106,30 @@ namespace CRUDWPF
             else 
             {
                 //if (txtEmail.Text != validate.Email && txtPass.Text != validate.Pass)
-                if (txtEmail.Text != validate.Email && Bcrypt.Verify(txtPass.Password, validate.Pass))
+                if (txtEmail.Text == validate.Email && Bcrypt.Verify(txtPass.Password, validate.Pass) == true)
                 {
-                    MessageBox.Show("Email or Pass is wrong");
+                    if (validate.Guid.Equals(""))
+                    {
+                        if (rememberMe.IsChecked == true)
+                        {
+                            Properties.Settings.Default.Mail = txtEmail.Text;
+                            Properties.Settings.Default.Password = txtPass.Password;
+                            Properties.Settings.Default.Save();
+                        }
+                        MainWindow main = new MainWindow();
+                        main.Show();
+                    }
+                    else
+                    {
+                        ChangePassWindow changePass = new ChangePassWindow();
+                        changePass.getEmail.Text = txtEmail.Text;
+                        changePass.Show();
+                    }
+                    this.Close();
                 }
                 else
                 {
-                    if (rememberMe.IsChecked == true)
-                    {
-                        Properties.Settings.Default.Mail = txtEmail.Text;
-                        Properties.Settings.Default.Password = txtPass.Password;
-                        Properties.Settings.Default.Save();
-                    }
-                    MainWindow main = new MainWindow();
-                    main.Show();
-                    this.Close();
+                    MessageBox.Show("Email or Pass is wrong");
                 }
             }
             
@@ -130,6 +139,13 @@ namespace CRUDWPF
         {
             RegisterWindow SignUp = new RegisterWindow();
             SignUp.Show();
+            this.Close();
+        }
+
+        private void forgot_Click(object sender, RoutedEventArgs e)
+        {
+            ForgotWindow forgot = new ForgotWindow();
+            forgot.Show();
             this.Close();
         }
     }

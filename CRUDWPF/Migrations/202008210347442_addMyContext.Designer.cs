@@ -13,7 +13,7 @@ namespace CRUDWPF.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202008190137029_addMyContext"; }
+            get { return "202008210347442_addMyContext"; }
         }
         
         string IMigrationMetadata.Source

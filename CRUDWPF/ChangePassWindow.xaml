@@ -1,0 +1,28 @@
+﻿<Window x:Class="CRUDWPF.ChangePassWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRUDWPF"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="600" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/image_3.jpg"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Background="#7F424242" />
+        <Label x:Name="Heading" Content="Change Password" Foreground="White" HorizontalAlignment="Left" Margin="93,53,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Rectangle HorizontalAlignment="Left" Height="307" VerticalAlignment="Top" Width="322" RadiusX="20" RadiusY="20" Margin="35,134,0,0" Fill="#4CC3C3C3"/>
+
+        <TextBlock x:Name="getEmail" Foreground="White" HorizontalAlignment="Left" Height="26" Margin="84,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" Visibility="Collapsed" />
+        
+        <Label x:Name="lblPass" Content="Password" Foreground="White" HorizontalAlignment="Left" Margin="93,181,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,0.458" FontSize="16" Width="87"/>
+        <PasswordBox Name="txtPass" Password="" Foreground="White" HorizontalAlignment="Center" Width="208" BorderBrush="#89FFFFFF" Margin="93,210,91,322"/>
+        <Label x:Name="lblRePass" Content="Confirm Password" Foreground="White" HorizontalAlignment="Left" Margin="93,268,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.468,0.458" FontSize="16" Width="140"/>
+        <PasswordBox x:Name="txtRePass" Foreground="White" HorizontalAlignment="Center" Margin="93,302,95,230" Width="204" BorderBrush="#89FFFFFF"/>
+
+        <Button x:Name="btnChange" Content="Submit" HorizontalAlignment="Left" Margin="146,361,0,0" VerticalAlignment="Top" Width="94" Click="btnChange_Click" Height="56" BorderBrush="#00000000" Background="#00008EFF"  />
+    </Grid>
+</Window>
